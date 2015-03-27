@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Guttmann\\SilverStripe": "code/"
+            "Guttmann\\SilverStripe\\": "code/"
         }
     }
 }
