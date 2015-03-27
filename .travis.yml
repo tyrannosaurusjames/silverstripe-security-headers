@@ -1,0 +1,21 @@
+language: php
+php:
+ - 5.3
+
+env:
+ - DB=MYSQL CORE_RELEASE=3.1
+ - DB=PGSQL CORE_RELEASE=3.1
+ - DB=SQLITE CORE_RELEASE=3.1
+
+before_script:
+ - git clone git://github.com/silverstripe-labs/silverstripe-travis-support.git ~/travis-support
+ - php ~/travis-support/travis_setup.php --source `pwd` --target ~/builds/ss
+ - cd ~/builds/ss
+ - cp ~/build/GOVTNZ/silverstripe-restfulserver/tests/phpunit.xml.dist .
+
+script:
+ - phpunit
+
+after_script:
+ - wget https://scrutinizer-ci.com/ocular.phar
+ - php ocular.phar code-coverage:upload --format=php-clover coverage.clover --repository=g/$TRAVIS_REPO_SLUG --revision=$TRAVIS_COMMIT
