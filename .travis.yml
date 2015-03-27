@@ -4,8 +4,6 @@ php:
 
 env:
  - DB=MYSQL CORE_RELEASE=3.1
- - DB=PGSQL CORE_RELEASE=3.1
- - DB=SQLITE CORE_RELEASE=3.1
 
 before_script:
  - git clone git://github.com/silverstripe-labs/silverstripe-travis-support.git ~/travis-support
@@ -13,7 +11,7 @@ before_script:
  - cd ~/builds/ss
 
 script:
- - ./vendor/bin/phpunit --coverage-clover=coverage.clover -c security-headers/phpunit.dist.xml security/tests
+ - ./vendor/bin/phpunit --coverage-clover=coverage.clover -c security-headers/phpunit.dist.xml security/tests/
 
 after_script:
  - wget https://scrutinizer-ci.com/ocular.phar
