@@ -1,0 +1,19 @@
+---
+Name: security-headers
+After:
+  - 'framework/*'
+  - 'cms/*'
+---
+Guttmann\SilverStripe\SecurityHeaderControllerExtension:
+  headers:
+    Content-Security-Policy: "default-src 'self';"
+    Strict-Transport-Security: "max-age=31536000"
+    Frame-Options: "deny"
+    X-XXS-Protection: "1; mode=block"
+    X-Content-Type-Options: "nosniff"
+  x_headers_map:
+    Content-Security-Policy:
+      - X-Content-Security-Policy
+      - X-WebKit-CSP
+    Frame-Options:
+      - X-Frame-Options

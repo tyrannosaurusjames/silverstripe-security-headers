@@ -1,0 +1,21 @@
+{
+    "name": "guttmann/silverstripe-security-headers",
+    "type": "silverstripe-module",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "James Goodman",
+            "homepage": "https://github.com/guttmann"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "composer/installers": "*",
+        "silverstripe/framework": "3.1.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Guttmann\\SilverStripe": "code/"
+        }
+    }
+}
