@@ -17,5 +17,8 @@
         "psr-4": {
             "Guttmann\\SilverStripe\\": "code/"
         }
+    },
+    "extra": {
+        "installer-name": "security-headers"
     }
 }
