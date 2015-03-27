@@ -11,10 +11,9 @@ before_script:
  - git clone git://github.com/silverstripe-labs/silverstripe-travis-support.git ~/travis-support
  - php ~/travis-support/travis_setup.php --source `pwd` --target ~/builds/ss
  - cd ~/builds/ss
- - cp ~/build/GOVTNZ/silverstripe-restfulserver/tests/phpunit.xml.dist .
 
 script:
- - phpunit
+ - ./vendor/bin/phpunit --coverage-clover=coverage.clover -c security-headers/phpunit.dist.xml security/tests
 
 after_script:
  - wget https://scrutinizer-ci.com/ocular.phar
