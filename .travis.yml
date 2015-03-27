@@ -11,7 +11,7 @@ before_script:
  - cd ~/builds/ss
 
 script:
- - ./vendor/bin/phpunit --coverage-clover=coverage.clover -c security-headers/phpunit.dist.xml security/tests/
+ - ./vendor/bin/phpunit --coverage-clover=coverage.clover -c security-headers/phpunit.dist.xml security-headers/tests/
 
 after_script:
  - wget https://scrutinizer-ci.com/ocular.phar
