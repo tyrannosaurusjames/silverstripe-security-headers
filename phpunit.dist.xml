@@ -21,4 +21,10 @@
             <directory suffix=".php">code</directory>
         </whitelist>
     </filter>
+    <listeners>
+        <listener class="SS_TestListener" file="framework/dev/TestListener.php" />
+    </listeners>
+    <php>
+        <get name="flush" value="1" />
+    </php>
 </phpunit>
