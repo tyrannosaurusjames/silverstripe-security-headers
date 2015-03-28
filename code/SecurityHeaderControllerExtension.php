@@ -32,19 +32,25 @@ class SecurityHeaderControllerExtension extends Extension
 
     private function browserHasWorkingCSPImplementation()
     {
-        $agent = strtolower($_SERVER['HTTP_USER_AGENT']);
+        $agent = strtolower(
+            $this->owner->getRequest()->getHeader('User-Agent')
+        );
 
-        if (strpos($agent, 'safari') !== false) {
-            $split = explode('version/', $agent);
+        if (strpos($agent, 'safari') === false) {
+            return true;
+        }
 
-            if (isset($split[1])) {
-                $version = trim($split[1]);
-                $versions = explode('.', $version);
+        $split = explode('version/', $agent);
 
-                if (isset($versions[0]) && $versions[0] <= 5) {
-                    return false;
-                }
-            }
+        if (!isset($split[1])) {
+            return true;
+        }
+
+        $version = trim($split[1]);
+        $versions = explode('.', $version);
+
+        if (isset($versions[0]) && $versions[0] <= 5) {
+            return false;
         }
 
         return true;
