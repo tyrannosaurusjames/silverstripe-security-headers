@@ -1,8 +1,8 @@
 # SilverStripe security headers
 
-[![Build Status](https://travis-ci.org/guttmann/metapod.svg?branch=master)](https://travis-ci.org/guttmann/metapod)
-[![Code Coverage](https://scrutinizer-ci.com/g/guttmann/metapod/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/guttmann/metapod/?branch=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/guttmann/metapod/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/guttmann/metapod/?branch=master)
+[![Build Status](https://travis-ci.org/guttmann/silverstripe-security-headers.svg?branch=master)](https://travis-ci.org/guttmann/silverstripe-security-headers)
+[![Code Coverage](https://scrutinizer-ci.com/g/guttmann/silverstripe-security-headers/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/guttmann/silverstripe-security-headers/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/guttmann/silverstripe-security-headers/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/guttmann/silverstripe-security-headers/?branch=master)
 
 SilverStripe module for easily adding a selection of [useful HTTP headers](https://www.owasp.org/index.php/List_of_useful_HTTP_headers).
 
@@ -24,7 +24,7 @@ For example, add this to your `mysite/_config/config.yml` file:
 
     Page_Controller:
       extensions:
-        - SecurityHeaderControllerExtension
+        - Guttmann\SilverStripe\SecurityHeaderControllerExtension
 
 ### Configure the headers
 
@@ -40,7 +40,7 @@ For example, your `mysite/_config/config.yml` file might look like this:
       - 'cms/*'
       - 'security-headers/*'
     ---
-    SecurityHeaderControllerExtension:
+    Guttmann\SilverStripe\SecurityHeaderControllerExtension:
       headers:
         Content-Security-Policy: "default-src 'self' *.google-analytics.com;"
         Strict-Transport-Security: "max-age=2592000"
