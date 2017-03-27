@@ -9,7 +9,7 @@ Guttmann\SilverStripe\SecurityHeaderControllerExtension:
     Content-Security-Policy: "default-src 'self';"
     Strict-Transport-Security: "max-age=31536000"
     Frame-Options: "deny"
-    X-XXS-Protection: "1; mode=block"
+    X-XSS-Protection: "1; mode=block"
     X-Content-Type-Options: "nosniff"
   x_headers_map:
     Content-Security-Policy:
