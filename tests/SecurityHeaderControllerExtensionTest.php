@@ -16,7 +16,7 @@ class SecurityHeaderControllerExtensionTest extends FunctionalTest
         'Content-Security-Policy' => 'test-value',
         'Strict-Transport-Security' => 'test-value',
         'Frame-Options' => 'test-value',
-        'X-XXS-Protection' => 'test-value',
+        'X-XSS-Protection' => 'test-value',
         'X-Content-Type-Options' => 'test-value'
     );
 
