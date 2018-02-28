@@ -15,4 +15,5 @@ script:
 
 after_script:
  - wget https://scrutinizer-ci.com/ocular.phar
- - php ocular.phar code-coverage:upload --format=php-clover coverage.clover --repository=g/$TRAVIS_REPO_SLUG --revision=$TRAVIS_COMMIT
+ - cd security-headers
+ - php ../ocular.phar code-coverage:upload --format=php-clover ../coverage.clover --repository=g/$TRAVIS_REPO_SLUG --revision=$TRAVIS_COMMIT
