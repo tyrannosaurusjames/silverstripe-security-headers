@@ -3,7 +3,7 @@ php:
  - 5.6
 
 env:
- - DB=MYSQL CORE_RELEASE=3.1
+ - DB=MYSQL CORE_RELEASE=4
 
 before_script:
  - git clone https://github.com/silverstripe-labs/silverstripe-travis-support.git ~/travis-support
