@@ -2,10 +2,10 @@
 
 namespace Guttmann\SilverStripe;
 
-use Config;
-use Controller;
-use Director;
-use FunctionalTest;
+use SilverStripe\Control\Controller;
+use SilverStripe\Control\Director;
+use SilverStripe\Core\Config\Config;
+use SilverStripe\Dev\FunctionalTest;
 
 class SecurityHeaderControllerExtensionTest extends FunctionalTest
 {
