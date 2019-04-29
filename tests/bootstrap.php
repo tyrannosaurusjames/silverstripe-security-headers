@@ -1,7 +1,7 @@
 <?php
 
 $autoloadFilename = __DIR__ . '/../../vendor/autoload.php';
-$frameworkBootstrapFilename = __DIR__ . '/../../framework/tests/bootstrap.php';
+$frameworkBootstrapFilename = __DIR__ . '/../../vendor/silverstripe/framework/tests/bootstrap.php';
 
 if (!file_exists($autoloadFilename)) {
     echo 'You must first install the vendors using composer.' . PHP_EOL;
