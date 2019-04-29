@@ -1,6 +1,6 @@
 ---
 Name: security-headers
-After: 'framework/*, cms/*'
+After: 'coreconfig'
 ---
 Guttmann\SilverStripe\SecurityHeaderControllerExtension:
   headers:
