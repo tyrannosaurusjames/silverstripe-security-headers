@@ -16,6 +16,10 @@ class SecurityHeaderControllerExtension extends Extension
         $xHeaderMap = (array) Config::inst()->get('Guttmann\SilverStripe\SecurityHeaderControllerExtension', 'x_headers_map');
 
         foreach ($headersToSend as $header => $value) {
+            if (empty($value)) {
+                continue;
+            }
+
             if ($header === 'Content-Security-Policy' && !$this->browserHasWorkingCSPImplementation()) {
                 continue;
             }
