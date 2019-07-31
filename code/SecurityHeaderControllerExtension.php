@@ -7,7 +7,6 @@ use Extension;
 
 class SecurityHeaderControllerExtension extends Extension
 {
-
     public function onAfterInit()
     {
         $response = $this->owner->getResponse();
@@ -16,6 +15,10 @@ class SecurityHeaderControllerExtension extends Extension
         $xHeaderMap = (array) Config::inst()->get('Guttmann\SilverStripe\SecurityHeaderControllerExtension', 'x_headers_map');
 
         foreach ($headersToSend as $header => $value) {
+            if (empty($value)) {
+                continue;
+            }
+
             if ($header === 'Content-Security-Policy' && !$this->browserHasWorkingCSPImplementation()) {
                 continue;
             }
@@ -55,5 +58,4 @@ class SecurityHeaderControllerExtension extends Extension
 
         return true;
     }
-
 }
